@@ -6,9 +6,12 @@ KREWES = {
 }
 
 x = input('Which team do you want a student from? (orpheus, rex, endymion)\n')
-y = KREWES[x]
-z = random.choice(y)
-print(z)
+if x not in KREWES:
+    print("That is not a valid team")
+else:
+    y = KREWES[x]
+    z = random.choice(y)
+    print(z)
 
 
 
