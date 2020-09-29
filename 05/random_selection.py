@@ -2,7 +2,7 @@
 # SoftDev
 # K05 -- Random Team Member Selector
 # 2020-09-05
-# The approach we chose for the team that the member was being selected from is that the user should specifiy which
+# The approach we chose for the team that the member was being selected from is that the user should specify which
 # team they're looking to receive a member from.
 
 from random import randint as r
