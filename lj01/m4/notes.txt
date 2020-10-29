@@ -1,0 +1,49 @@
+-$ has multiple uses
+	-Precedes MQL operators and Aggregation pipeline stages
+		-"The MongoDB aggregation pipeline consists of stages. Each stage transforms the documents as they pass through the pipeline."
+	-Allows access to field values
+
+-Comparison Operators
+	-$eq/$neq (equal or not equal) {<fieldname>:{<"$eq">:<value>}}
+	-$gt/$lt (greater than or less than) {<fieldname>:{<"$lt">:<value>}}
+	-$gte/$lte
+
+-Logic Operators
+	-$and Matches all query clauses {"$and":[{statement1},{statement2}]}
+	-$or At least one query clauses is matched {"$or":[{statement1},{statement2}]}
+	-$nor Fail to match both given clauses
+	-$not Negates query requirement
+
+-Comparison Syntax
+	-{<field>:{<operator>:<value>}}
+-Logic Syntax for NOT
+	{"$not":{statement}}
+
+-$expr
+	-Allows the use of aggregation expressions within the query language
+	-{$expr:{<expression>}}
+	-Allows us to use variables and conditional statements
+
+-{<array field>:{"$size":<number>}} Returns documents with specified array field of exact size 
+-{<array field>:{"$all":<array>}} Returns documents with all documents in which the specified array field contains all of the given elements regardless of their order in the array
+
+-Projection Syntax
+	-db.<collection>.find({<query>},{<projection>})
+	-1 includes the field
+	-0 excludes the field
+
+-ElemMatch
+	-db.<collection>.find({<array field>:{"$elemMatch":{<key>:<value>}}})
+	-Finds document with a matching element in the array field
+
+
+-Querying subdocuments
+	-db.<collection>.findOne({<fieldname>.<subfieldname>: <what you're looking for> })
+	-Dot notation is like a path
+
+-Accessing the 0th array element 
+	-db.companies.find({"relationships.0.person.last_name":"Zuckerberg"},{"name":1})
+
+-Regex Operator
+	-{"$regex":<what you want the string to match>}
+
