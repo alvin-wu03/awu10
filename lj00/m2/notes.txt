@@ -1,0 +1,6 @@
+-JSON vs BSON 
+	-BSON is faster than JSON
+	-BSON has more data support than JSON
+-You can convert the two types by importing and exporting data
+-To query the data, you need to select a db and then give it parameters to search for using the find command
+-The order is (show collections) (use <collection>) (db.<colname>.find({<"key":value>})

@@ -1,0 +1,28 @@
+-To insert a new document into a collection:
+	-You can use the atlas UI and insert documents using the button labeled accordingly
+	-You can also use the shell 
+
+-You can insert multiple documents at once
+	-Order them using the ordered parameter
+
+-You can update multiple documents at once
+	-db.<collection>.updateMany({"key":value},{"$inc":{"pop":10}})
+				    finds documents, increases field by 10
+	-db.<collection>.updateMany({"key":value},{"$set":{"pop":10}})
+				    finds documents, sets field to 10
+
+-You can delete documents too
+	-deleteOne()
+	-deleteMany()
+	-Generally use the document id
+
+-To delete a collection, use the drop function
+
+
+-Duplicate key error is when you try to insert data that is already present in the db
+	-To fix this, use the drop command to remove duplicates
+
+-Every document has a unique _id value
+-ObjectId()
+	-Default value for the _id field unless otherwise specified
+ 

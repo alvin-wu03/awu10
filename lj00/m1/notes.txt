@@ -1,0 +1,2 @@
+-Atlas manages the database on a website without needing to download anything
+-MongoDB shell is a terminal that lets you run shell commands without downloading anything 
