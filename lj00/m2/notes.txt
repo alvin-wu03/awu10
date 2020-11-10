@@ -1,3 +1,9 @@
+Team MEA
+Alvin Wu, Michelle Thaung, Erin Lee
+SoftDev
+LJ00: Le Voyage de Learnination avec Mongo, Première Phase
+2020-10-29
+
 -JSON vs BSON 
 	-BSON is faster than JSON
 	-BSON has more data support than JSON

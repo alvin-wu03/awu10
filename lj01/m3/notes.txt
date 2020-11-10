@@ -1,3 +1,9 @@
+Team MEA
+Alvin Wu, Michelle Thaung, Erin Lee
+SoftDev
+LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase
+2020-11-12
+
 -To insert a new document into a collection:
 	-You can use the atlas UI and insert documents using the button labeled accordingly
 	-You can also use the shell 

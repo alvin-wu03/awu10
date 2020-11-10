@@ -1,3 +1,9 @@
+Team MEA
+Alvin Wu, Michelle Thaung, Erin Lee
+SoftDev
+LJ01: Le Voyage de Learnination avec Mongo, Deuxième Phase
+2020-11-12
+
 -$ has multiple uses
 	-Precedes MQL operators and Aggregation pipeline stages
 		-"The MongoDB aggregation pipeline consists of stages. Each stage transforms the documents as they pass through the pipeline."
