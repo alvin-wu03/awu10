@@ -1,0 +1,58 @@
+Team MEA
+Alvin Wu, Michelle Thaung, Erin Lee
+SoftDev
+LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase
+2020-11-13
+
+Aggregation Framework
+	-Another way to query data
+Syntax:
+db.listingsAndReviews.aggregate([
+		{$match:{"amenities":"Wifi"}},
+		{$project:"price":1,"address":1,"_id":0}}
+		]}
+
+Why Aggregation?
+-Versatile way to work with data
+
+
+-$group
+An operator that takes the incoming stream of data, and siphons it into multiple distinct reservoirs
+
+Syntax:
+{$group:
+	{
+	_id: <expression>, //Group by expression
+	<field1>: {<accumulator1>:<expression1>},
+	...}}
+
+
+-sort()
+
+Syntax:
+db.zips.find().sort({"pop":1}).limit(1)) 
+Sorts by population in increasing order (smallest), and returns only the first document
+db.zips.find().sort({"pop":-1}).limit(1)) 
+Sorts by population in decreasing order (largest), and returns only the first document
+
+-Indexes
+Special data structure that stores a small portion of the collection's data set in an easy to traverse form
+
+Syntax:
+db.trips.createIndex({"birth year":1})
+Creates an index of the birth year field in increasing order (single field index)
+db.trips.createIndex({"start station id":1,"birth year":1}) (compound index)
+
+-Data Modeling
+A way to organize fields in a document to support application performance and querying capabilities
+
+Rule: Data is stored in the way that it is used
+
+-Upsert
+A hybrid of update and insert, it should only be used when needed. Will do either depending on criteria. If there is a match, update it. If there isn't a match, insert a new document.
+db.collection.updateOne({<query to locate>}, {<update>})
+
+Syntax:
+db.collection.updateOne({<query to locate>}, {<update>},{"upsert":true})
+
+

@@ -1,0 +1,14 @@
+Team MEA
+Alvin Wu, Michelle Thaung, Erin Lee
+SoftDev
+LJ02: Le Voyage de Learnination avec Mongo, Troisième Phase
+2020-11-13
+
+-Atlas has the same features as the shell, except you can more easily use and navigate them
+-You can convert aggregation pipeline code from MongoDB to a different programming language
+
+-Realm allows you to create cross-platform apps
+-Charts allows for dynamic data visualizations
+
+-Compass is similar to the data explorer, but has other features as well
+
