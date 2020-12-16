@@ -40,5 +40,7 @@ with open('courses.csv', newline = '') as csvfile2: #Open second csv file, cours
 
 db.commit() #save changes
 db.close()  #close database
+csvfile.close()
+csvfile2.close()
 
 
