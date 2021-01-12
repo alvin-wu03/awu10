@@ -1,0 +1,47 @@
+body {
+  height:800px;
+  width:800px;
+  background-color: grey;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  background-color:lightgrey;
+  padding: 5px;
+}
+
+ul{
+list-style-type: none;
+display:inline;
+}
+a:link{
+color:white;
+text-decoration: none;
+}
+
+a:visited{
+color:white;
+text-decoration: none;
+}
+.sidebar {
+  font-weight: bold;
+  position:relative;
+  margin-top:-35px;
+  display:inline-block;
+  text-align:left;
+}
+
+.main {
+  position:relative;
+  margin-top:-130px;
+  display:inline-block;margin-left:150px;
+}
+
+.bottom {
+color:grey;
+background-color:dimgray;
+text-align:right;
+bottom: 10px;
+padding: 10px;
+}
