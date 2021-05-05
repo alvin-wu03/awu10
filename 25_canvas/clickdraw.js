@@ -1,52 +1,51 @@
-// Alvin Wu & Dean Carey
-// SoftDev pd 1
+// Dean Carey & Alvin Wu
+// SoftDev pd1
 // K25 -- Canvas Based JS Drawing
-// 2021-05-05
+// 2021-05-04
 
-var c = document.getElementById("slate"); //Gets canvas
-var ctx = c.getContext("2d"); //2D drawing context
-var pos = {x:0,y:0}; //Default position of cursor
-var state = 0; //0 is line, 1 is box, initialize state as line by default
 
-function changeState() //Change type of drawing
+var c = document.getElementById("slate"); //fetch empty canvas
+var ctx = c.getContext("2d"); //drawing in a 2d canvas
+var pos = {x:0,y:0};
+var state = 0; //0 is dot, 1 is box
+
+function changeState()
 	{
-	if (state === 0)
-		{state = 1; document.getElementById('drawtype').innerHTML = "Current Type: Box";}
+	if (state == 0)
+		{state = 1; document.getElementById('drawtype').innerHTML = "Current Type: Box";} //changes state to box if set to dot
 	else
-		{state = 0; document.getElementById('drawtype').innerHTML = "Current Type: Line";}
+		{state = 0; document.getElementById('drawtype').innerHTML = "Current Type: Dot";} //changes state to dot if set to box
 	}
-	
-function getPosition(e) //Takes in a mouse event and changes the x and y coords of pos by using offset
+
+	// `e.offsetX` returns horizontal distance from mouse to x-coord of target element
+    	// `e.offsetY` returns vertical distance from mouse to y-coord of target element
+
+
+function drawDot(e)
 	{
-	const rect = c.getBoundingClientRect();
-    	pos.x = e.offsetX;
-    	pos.y = e.offsetY;
+	ctx.fillStyle = "#000000";
+	ctx.fillRect(e.offsetX, e.offsetY, 4, 4); //very small square, appears like dot
+	ctx.stroke();
 	}
 
-function drawline(event) //Draws line
+function drawrect(e)
 	{
-	if (state == 0) //Check to make sure the setting is on "line" mode
-		{
-		if (event.buttons !== 1) //Only draw when the mouse is clicked down, otherwise stop
-			return;
-		getPosition(event); //Set mouse position
-		ctx.fillStyle = "#000000"; 
-		ctx.fillRect (pos.x, pos.y, 4, 4); //Draw a rect of width 4 and height 4 at the cursor, can be held down
-		}
+	ctx.fillStyle = "#000000"; //black
+	ctx.beginPath(); //starts new path, wipes old paths from record
+	ctx.rect(e.offsetX, e.offsetY, 100, 100); //100 x 100 square centered at mouse click
+	ctx.stroke(); //finalizes path and draws
 	}
 
-function drawrect(event) //Draws rectangle
+function draw(event)
 	{
-	if (state == 1) //Checks to make sure the setting is on "rect" mode
-		{
-		getPosition(event); //Set mouse position
-		ctx.fillStyle = "#000000";
-		ctx.beginPath(); //Begin a new sequence
-		ctx.rect(pos.x,pos.y,100,100); //Draw a rect of width 100 and height 100 at the cursor, cannot be held down
-		ctx.stroke(); //Finalize and draw
-		}
+	if (state == 0)
+		{drawDot(event)}
+	if (state == 1)
+		{drawrect(event)}
 	}
 
+function clearcanv()
+	{ctx.clearRect(0,0,c.width,c.height);} //clears all drawing within the canvas
 
-function clearcanv() //Clears canvas using clearRect
-	{ctx.clearRect(0,0,c.width,c.height);}
+function returnState()
+	{return state}
