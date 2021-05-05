@@ -27,7 +27,7 @@ var drawDot = () => {
   dotButton.removeEventListener("click", drawDot); //Removes ability to click button again once it's already in motion
   if (growing) //Grow circle
 	{
-	if (radius < Math.min(c.width,c.height)) //Grow until circle reaches canvas size
+	if (radius < Math.min(c.width / 2,c.height / 2)) //Grow until circle reaches canvas size
 		{
 		ctx.clearRect(0,0,c.width,c.height); //Clear canvas
 		ctx.beginPath();
