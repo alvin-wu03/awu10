@@ -6,7 +6,7 @@ var ctx = c.getContext("2d");
 
 ctx.fillStyle = "#000000";
 
-var requestID;
+var requestID = 0;
 
 var clear = (e) => {
     console.log("clear invoked...")
@@ -18,21 +18,23 @@ var reset = () => {
 }
 
 var start = () => {
-	drawBall();
-	drawPlatform();
+	drawBall(250,380);
+	drawPlatform(225,400);
 	//drawBricks();
 	//play();
 }
 
-var drawBall = () => {
+var drawBall = (x,y) => {
 	ctx.beginPath();
-	ctx.arc(250,380,10,0,Math.PI * 2);
+	ctx.arc(x,y,10,0,Math.PI * 2);
 	ctx.stroke();
 } 
 
-var drawPlatform = () => {
+
+
+var drawPlatform = (x,y) => {
 	ctx.beginPath();
-	ctx.rect(225,400,50,5);
+	ctx.rect(x,y,50,5);
 	ctx.stroke();
 }
 
@@ -45,7 +47,18 @@ var play = () => {
 	//bouncing, bricks disappearing, collision
 	//mouse control of platform?
 }
+
+var mousemove = (e) => {
+	console.log('mousemove invoked');
+	window.cancelAnimationFrame(requestID);
+	//ctx.clearRect(0,0,c.width,c.height);
+	x = e.offsetX;
+	y = e.offSetY;
+	drawPlatform(x,y);
+	requestID = window.requestAnimationFrame(mousemove);
+}
 	
 
 playButton.addEventListener('click', start);
 resetButton.addEventListener('click', reset);
+c.addEventListener('mousemove', mousemove);
