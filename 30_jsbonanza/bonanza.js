@@ -1,3 +1,8 @@
+//Team RAP: Alvin Wu, Pak Ming Lau, Ryan Ma
+//SoftDev pd1
+//K30 -- JSorcery
+//2021-05-17 
+
 var c = document.getElementById("playground");
 var playButton = document.getElementById("buttonPlay");
 var resetButton = document.getElementById("buttonReset");
